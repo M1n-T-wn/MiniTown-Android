@@ -4,7 +4,239 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".login.ui.RegisterActivity">
+
+        <ScrollView
+            android:id="@+id/scrollView_register"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
+            app:layout_constraintRight_toRightOf="@id/vertical_line4"
+            app:layout_constraintTop_toTopOf="@id/horizontal_line2"
+            app:layout_constraintBottom_toTopOf="@id/btn_signup2"
+            android:layout_marginBottom="20dp"
+            >
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                       >
+                       <TextView
+                           android:id="@+id/tv_make_birth"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:text="생년월일"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_birth"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_birth"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:hint="생년월일 8글자를 입력해주세요"
+                           android:textColorHint="@color/gray"
+                           android:maxLength="8"
+                           android:inputType="number"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_gender"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_birth"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="성별"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_gender"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_gender"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:hint="예) MEN 또는 WOMEN"
+                           android:textColorHint="@color/gray"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_phone"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_gender"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="전화번호"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_phone"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_phone"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:inputType="number"
+                           android:hint="전화번호를 입력해주세요(- 없음)"
+                           android:textColorHint="@color/gray"
+                           android:maxLength="11"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_name"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_phone"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="이름"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_name"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_name"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:hint="예) 홍길동"
+                           android:textColorHint="@color/gray"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_id"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_name"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="아이디"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_id"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_id"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_password"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_id"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="비밀번호"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_password"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_password"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_address"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_password"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="주소"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_address"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_address"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_detail"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_address"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="상세주소"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_detail"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_detail"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:textSize="17sp"
+                           android:textColor="@color/black"
+                           android:fontFamily="@font/gothic"/>
+
+
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/vertical_line1"
@@ -85,82 +317,10 @@
             android:fontFamily="@font/gothic"
             android:textColor="@color/black"/>
 
-        <TextView
-            android:id="@+id/tv_make_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="@id/vertical_line4"
-            app:layout_constraintTop_toBottomOf="@id/horizontal_line2"
-            app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-            android:text="아이디"
-            android:textColor="@color/gray"
-            android:textSize="17sp"
-            android:fontFamily="@font/gothic"/>
 
-        <EditText
-            android:id="@+id/et_make_id"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/tv_make_id"
-            app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-            app:layout_constraintRight_toRightOf="@id/vertical_line4"
-            android:layout_marginTop="20dp"
-            android:textSize="17sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/gothic"/>
-
-        <TextView
-                android:id="@+id/tv_make_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintRight_toRightOf="@id/vertical_line4"
-                app:layout_constraintTop_toBottomOf="@id/et_make_id"
-                app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-                android:layout_marginTop="30dp"
-                android:text="비밀번호"
-                android:textColor="@color/gray"
-                android:textSize="17sp"
-                android:fontFamily="@font/gothic"/>
-
-            <EditText
-                android:id="@+id/et_make_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/tv_make_password"
-                app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-                app:layout_constraintRight_toRightOf="@id/vertical_line4"
-                android:layout_marginTop="20dp"
-                android:textSize="17sp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/gothic"/>
-
-        <TextView
-            android:id="@+id/tv_make_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="@id/vertical_line4"
-            app:layout_constraintTop_toBottomOf="@id/et_make_password"
-            app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-            android:layout_marginTop="30dp"
-            android:text="이름"
-            android:textColor="@color/gray"
-            android:textSize="17sp"
-            android:fontFamily="@font/gothic"/>
-
-        <EditText
-            android:id="@+id/et_make_name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/tv_make_name"
-            app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
-            app:layout_constraintRight_toRightOf="@id/vertical_line4"
-            android:layout_marginTop="20dp"
-            android:textSize="17sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/gothic"/>
 
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_signup2"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="@id/horizontal_line4"
@@ -168,7 +328,7 @@
             app:layout_constraintLeft_toLeftOf="@id/vertical_line3"
             app:layout_constraintRight_toRightOf="@id/vertical_line4"
             android:background="@drawable/btn_design"
-            android:text="Login"
+            android:text="Sign Up"
             android:textColor="@color/white"
             android:fontFamily="@font/square"
             android:textStyle="bold"
