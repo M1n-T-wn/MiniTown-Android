@@ -40,9 +40,9 @@
                            app:layout_constraintTop_toTopOf="@id/tv_make_birth"
                            app:layout_constraintLeft_toLeftOf="parent"
                            app:layout_constraintRight_toRightOf="parent"
-                           android:hint="생년월일 8글자를 입력해주세요"
+                           android:hint="예) 2000-01-01"
                            android:textColorHint="@color/gray"
-                           android:maxLength="8"
+                           android:maxLength="10"
                            android:inputType="number"
                            android:layout_marginTop="20dp"
                            android:textSize="17sp"
@@ -62,26 +62,37 @@
                            android:textSize="17sp"
                            android:fontFamily="@font/gothic"/>
 
-                       <EditText
-                           android:id="@+id/et_make_gender"
+                       <RadioGroup
+                           android:id="@+id/rg_make_gender"
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           app:layout_constraintTop_toTopOf="@id/tv_make_gender"
-                           app:layout_constraintLeft_toLeftOf="parent"
-                           app:layout_constraintRight_toRightOf="parent"
-                           android:hint="예) MEN 또는 WOMEN"
-                           android:textColorHint="@color/gray"
-                           android:layout_marginTop="20dp"
-                           android:textSize="17sp"
-                           android:textColor="@color/black"
-                           android:fontFamily="@font/gothic"/>
+                           android:orientation="horizontal"
+                           app:layout_constraintTop_toBottomOf="@id/tv_make_gender">
+
+                               <RadioButton
+                                   android:id="@+id/rbtn_man"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/noto_sans_bold"
+                                   android:text="MEN"
+                                   android:textColor="@color/black"/>
+
+                               <RadioButton
+                                   android:id="@+id/rbtn_woman"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/noto_sans_bold"
+                                   android:text="WOMEN"
+                                   android:textColor="@color/black"/>
+
+                       </RadioGroup>
 
                        <TextView
                            android:id="@+id/tv_make_phone"
                            android:layout_width="0dp"
                            android:layout_height="wrap_content"
                            app:layout_constraintRight_toRightOf="parent"
-                           app:layout_constraintTop_toBottomOf="@id/et_make_gender"
+                           app:layout_constraintTop_toBottomOf="@id/rg_make_gender"
                            app:layout_constraintLeft_toLeftOf="parent"
                            android:layout_marginTop="20dp"
                            android:text="전화번호"
@@ -97,20 +108,60 @@
                            app:layout_constraintLeft_toLeftOf="parent"
                            app:layout_constraintRight_toRightOf="parent"
                            android:inputType="number"
-                           android:hint="전화번호를 입력해주세요(- 없음)"
+                           android:hint="phoneNum"
+                           android:enabled="false"
                            android:textColorHint="@color/gray"
                            android:maxLength="11"
                            android:layout_marginTop="20dp"
                            android:textSize="17sp"
+                           android:textColor="@color/gray"
+                           android:fontFamily="@font/gothic"/>
+
+                       <TextView
+                           android:id="@+id/tv_make_receive_sms"
+                           android:layout_width="0dp"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintRight_toRightOf="parent"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_phone"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           android:layout_marginTop="20dp"
+                           android:text="이름"
+                           android:textColor="@color/gray"
+                           android:textSize="17sp"
+                           android:fontFamily="@font/gothic"/>
+
+                       <EditText
+                           android:id="@+id/et_make_receive_sms"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toTopOf="@id/tv_make_receive_sms"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toLeftOf="@id/btn_receive_sms"
+                           android:layout_marginTop="20dp"
+                           android:hint="인증번호 6자리를 입력해주세요"
+                           android:textColorHint="@color/gray"
+                           android:textSize="17sp"
                            android:textColor="@color/black"
                            android:fontFamily="@font/gothic"/>
+
+                       <Button
+                           android:id="@+id/btn_receive_sms"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/btn_design"
+                           android:text="인증"
+                           android:textColor="@color/white"
+                           android:fontFamily="@font/gothic"
+                           app:layout_constraintTop_toBottomOf="@id/tv_make_receive_sms"
+                           app:layout_constraintBottom_toBottomOf="@id/et_make_receive_sms"
+                           app:layout_constraintRight_toRightOf="parent"/>
 
                        <TextView
                            android:id="@+id/tv_make_name"
                            android:layout_width="0dp"
                            android:layout_height="wrap_content"
                            app:layout_constraintRight_toRightOf="parent"
-                           app:layout_constraintTop_toBottomOf="@id/et_make_phone"
+                           app:layout_constraintTop_toBottomOf="@id/et_make_receive_sms"
                            app:layout_constraintLeft_toLeftOf="parent"
                            android:layout_marginTop="20dp"
                            android:text="이름"
@@ -195,15 +246,29 @@
                            android:textSize="17sp"
                            android:fontFamily="@font/gothic"/>
 
+                       <Button
+                           android:id="@+id/btn_search_address"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           app:layout_constraintTop_toBottomOf="@id/tv_make_address"
+                           app:layout_constraintLeft_toLeftOf="parent"
+                           app:layout_constraintRight_toRightOf="parent"
+                           android:text="주소 검색"
+                           android:textColor="@color/white"
+                           android:fontFamily="@font/gothic"
+                           android:background="@drawable/btn_design"/>
+
                        <EditText
                            android:id="@+id/et_make_address"
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
-                           app:layout_constraintTop_toTopOf="@id/tv_make_address"
+                           app:layout_constraintTop_toBottomOf="@id/btn_search_address"
                            app:layout_constraintLeft_toLeftOf="parent"
                            app:layout_constraintRight_toRightOf="parent"
                            android:layout_marginTop="20dp"
                            android:textSize="17sp"
+                           android:hint="주소를 입력해주세요"
+                           android:enabled="false"
                            android:textColor="@color/black"
                            android:fontFamily="@font/gothic"/>
 

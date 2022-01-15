@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.minitown.login.ui.LoginActivity;
+import com.example.minitown.login.ui.SendSmsActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button button;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, SendSmsActivity.class);
                 startActivity(intent);
             }
         });

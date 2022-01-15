@@ -2,38 +2,16 @@ package com.example.minitown.login.ui.data;
 
 public class RegisterRequest {
 
-    private String birth;
-    private String gender;
-    private String phone;
     private String name;
     private String id;
     private String password;
+    private String gender;
+    private String birth;
+    private String phone;
     private String adress;
-    private String detail;
-
-    public String getBirth() {
-        return birth;
-    }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    private String detailAddress;
+    private String addressCode;
+    private String keyAddress;
 
     public String getName() {
         return name;
@@ -59,6 +37,30 @@ public class RegisterRequest {
         this.password = password;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getAdress() {
         return adress;
     }
@@ -67,12 +69,28 @@ public class RegisterRequest {
         this.adress = adress;
     }
 
-    public String getDetail() {
-        return detail;
+    public String getDetailAddress() {
+        return detailAddress;
     }
 
-    public void setDetail(String detail) {
-        this.detail = detail;
+    public void setDetailAddress(String detailAddress) {
+        this.detailAddress = detailAddress;
+    }
+
+    public String getAddressCode() {
+        return addressCode;
+    }
+
+    public void setAddressCode(String addressCode) {
+        this.addressCode = addressCode;
+    }
+
+    public String getKeyAddress() {
+        return keyAddress;
+    }
+
+    public void setKeyAddress(String keyAddress) {
+        this.keyAddress = keyAddress;
     }
 }
 

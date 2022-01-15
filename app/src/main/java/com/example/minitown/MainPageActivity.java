@@ -3,16 +3,23 @@ package com.example.minitown;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.minitown.login.ui.data.LoginResponse;
-import com.example.minitown.login.ui.data.RegisterResponse;
+import com.example.minitown.login.ui.data.ApiClient;
+import com.example.minitown.login.ui.data.TokenResponse;
+import com.example.minitown.user.ProfileResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainPageActivity extends AppCompatActivity {
-    LoginResponse loginResponse;
-    TextView profile_name;
+    private TokenResponse loginResponse;
+    private TextView profile_name;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,12 +28,32 @@ public class MainPageActivity extends AppCompatActivity {
 
         profile_name = (TextView) findViewById(R.id.tv_profile_name);
 
-        Intent intent = getIntent();
-        if (intent.getExtras() != null){
-            loginResponse = (LoginResponse) intent.getSerializableExtra("data");
-            profile_name.setText(loginResponse.getName());
-            Log.e("TAG", "=====>" + loginResponse.getId());
+        loginResponse = new TokenResponse();
+        sharedPreferences = getSharedPreferences("token", MODE_PRIVATE);
+        ProfileResponse profileResponse = new ProfileResponse();
+        String name = profileResponse.getName(profileResponse);
 
+        ApiClient.getService().profile(profileResponse).enqueue(new Callback<ProfileResponse>() {
+            @Override
+            public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
+
+                profile_name.setText(name);
+            }
+
+            @Override
+            public void onFailure(Call<ProfileResponse> call, Throwable t) {
+
+            }
+        });
+        String accessToken = sharedPreferences.getString("accessToken", "");
+        String refreshToken = sharedPreferences.getString("refreshToken", "");
+
+        if (accessToken != null && !accessToken.isEmpty()) {
+            loginResponse.setAccessToken(accessToken);
+        }
+
+        if (refreshToken != null && !refreshToken.isEmpty()) {
+            loginResponse.setRefreshToken(refreshToken);
         }
     }
 }
